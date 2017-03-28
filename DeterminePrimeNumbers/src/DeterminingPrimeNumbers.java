@@ -9,6 +9,7 @@ public class DeterminingPrimeNumbers
 		int lastCount=0;
 		double startTime =0;
 		double endTime=0;
+		double endTimeAtThousand=0;
 		long[] lastFive= new long[5];
 		startTime=System.nanoTime();
 		System.out.println();
@@ -32,6 +33,11 @@ public class DeterminingPrimeNumbers
 							lastCount=0;
 						}
 						
+					if(count==10000)
+					{
+						endTimeAtThousand=System.nanoTime();
+						System.out.println("It takes : "+(endTimeAtThousand-startTime)/1000000000+" seconds to count 10000 numbers");
+					}
 				}
 				if(i%j==0)
 					break;
@@ -61,6 +67,7 @@ public class DeterminingPrimeNumbers
 		int lastCount=0;
 		double startTime =0;
 		double endTime=0;
+		double endTimeAtThousand=0;
 		long[] lastFive= new long[5];
 		startTime=System.nanoTime();
 		System.out.println();
@@ -88,6 +95,11 @@ public class DeterminingPrimeNumbers
 							System.out.print(i+",");//prints the first 5 prime numbers
 						else
 							System.out.print(i);
+					}
+					if(count==1000)
+					{
+						endTimeAtThousand=System.nanoTime();
+						System.out.println("It takes : "+(endTimeAtThousand-startTime)/1000000000+" seconds to count 10000 numbers");
 					}
 				}
 				if(i%j==0)
@@ -118,6 +130,8 @@ public class DeterminingPrimeNumbers
 		endPoint = 10000;
 		determinePrime(startingPoint,endPoint);
 		endPoint=100000;
+		determinePrime(startingPoint,endPoint);
+		endPoint=1000000;
 		determinePrime(startingPoint,endPoint);
 		endPoint=10000000;
 		determinePrime(startingPoint,endPoint);
